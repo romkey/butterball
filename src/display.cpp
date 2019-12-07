@@ -1,5 +1,6 @@
 #include "display.h"
 
+#include <multiball/app.h>
 #include "butterball.h"
 
 #include <WiFi.h>
@@ -24,8 +25,8 @@ void display_begin() {
 void display_ip() {
   display.clearDisplay();
   display.setCursor(0,0);
-  display.println(BApp.hostname());
-  display.println(BApp.ip_address());
+  display.println(App.hostname());
+  display.println(App.ip_address());
   display.display();
 }
 
@@ -33,6 +34,6 @@ void display_update() {
   display.clearDisplay();
   display.setCursor(0,0);
   display.setTextSize(4);
-  display.println((int)BApp.high_temperatureF());
+  display.println((int)Butterball.high_temperatureF());
   display.display();
 }

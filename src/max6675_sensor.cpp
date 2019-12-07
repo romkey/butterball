@@ -9,7 +9,6 @@ void MAX6675_Sensor::begin() {
 void MAX6675_Sensor::handle() {
   if(millis() - _last_read > 1000) {
     _temperatureC = _max6675.readCelsius();
-    _temperatureF = _max6675.readFahrenheit();
     _last_read = millis();
   }
 }

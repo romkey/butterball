@@ -21,5 +21,4 @@ class MAX31855_Sensor : public Sensor {
   unsigned long _last_read;
 
   float _temperatureC;
-  float _temperatureF;
 };

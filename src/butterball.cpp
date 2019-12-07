@@ -9,10 +9,8 @@
 #include "max6675_sensor.h"
 #include "max31855_sensor.h"
 
-ButterballApp BApp;
-
 void ButterballApp::begin() {
-  MultiballApp::begin("butterball");
+  //  MultiballApp::begin("butterball");
 
 #if 0
   _max6675.begin();

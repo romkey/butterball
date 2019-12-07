@@ -11,6 +11,9 @@
 
 #include "hw.h"
 
+MultiballApp App;
+ButterballApp Butterball;
+
 void setup() {
   const wifi_credential_t wifi_credentials[] = {
     { WIFI_SSID1, WIFI_PASSWORD1 },
@@ -20,19 +23,33 @@ void setup() {
 
   delay(500);
 
-  BApp.wifi_credentials(3, wifi_credentials);
-  BApp.begin();
+  App.wifi_credentials(3, wifi_credentials);
+  App.begin("butterball");
 
   homebus_configure("butterball", "", "Homebus", "1");
   homebus_setup();
 
+  Butterball.begin();
   Serial.println("[butterball]");
+
+  bme280_setup();
+  Serial.println("[bme280]");
 }
 
 void loop() {
-  BApp.handle();
+  Serial.println("app handle");
+  App.handle();
+  delay(500);
 
+  Serial.println("butterball handle");
+  Butterball.handle();
+  delay(500);
+
+  Serial.println("homebus handle");
   homebus_handle();
+  delay(500);
 
+  Serial.println("bme280 handle");
   bme280_handle();
+  delay(500);
 }

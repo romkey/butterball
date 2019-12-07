@@ -1,10 +1,8 @@
 #pragma once
 
-#include <multiball/app.h>
-
 #include "max31855_sensor.h"
 
-class ButterballApp : public MultiballApp {
+class ButterballApp {
 public:
   void begin();
   void handle();
@@ -19,4 +17,4 @@ private:
   MAX31855_Sensor _max31855 = MAX31855_Sensor(60*1000, 0, 0, false);
 };
 
-extern ButterballApp BApp;
+extern ButterballApp Butterball;
