@@ -10,3 +10,5 @@
 #define WIFI_PASSWORD3 "wifi password 3"
 
 #define UPDATE_DELAY 60*1000
+
+#define USE_MAX6675
