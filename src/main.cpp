@@ -7,12 +7,10 @@
 
 #include <multiball/app.h>
 #include <multiball/homebus.h>
-#include <multiball/bme280.h>
 
 #include "hw.h"
 
 MultiballApp App;
-ButterballApp Butterball;
 
 void setup() {
   const wifi_credential_t wifi_credentials[] = {
@@ -29,11 +27,8 @@ void setup() {
   homebus_configure("butterball", "", "Homebus", "1");
   homebus_setup();
 
-  Butterball.begin();
+  butterball_setup();
   Serial.println("[butterball]");
-
-  bme280_setup();
-  Serial.println("[bme280]");
 }
 
 void loop() {
@@ -42,14 +37,6 @@ void loop() {
   delay(500);
 
   Serial.println("butterball handle");
-  Butterball.handle();
-  delay(500);
-
-  Serial.println("homebus handle");
-  homebus_handle();
-  delay(500);
-
-  Serial.println("bme280 handle");
-  bme280_handle();
+  butterball_handle();
   delay(500);
 }

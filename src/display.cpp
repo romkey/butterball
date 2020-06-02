@@ -8,7 +8,7 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
-Adafruit_SSD1306 display;
+static Adafruit_SSD1306 display;
 
 void display_begin() {
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
@@ -30,10 +30,10 @@ void display_ip() {
   display.display();
 }
 
-void display_update() {
+void display_update(float temp) {
   display.clearDisplay();
   display.setCursor(0,0);
   display.setTextSize(4);
-  display.println((int)Butterball.high_temperatureF());
+  display.println((int)temp);
   display.display();
 }
