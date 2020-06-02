@@ -1,5 +1,7 @@
 # The Butterball
 
+[![Build Status](https://travis-ci.com/romkey/butterball.svg?branch=master)](https://travis-ci.com/romkey/butterball)
+
 Butterball (not associated in any way with the turkey company) is an open-source hardware project based on [Furball](https://github.com/HomeBusProjects/furball)/[Dustball](https://github.com/romkey/dustball-client), which are open-source hardware projects intended to help with the research and development of HomeBus, an IoT auto-provisioning framework.
 
 HomeBus is nowhere near ready to go and we want to use Butterball now, so Butterball will start out reporting via a REST API to the Butterball server. It can also be configured to report to an MQTT server.
